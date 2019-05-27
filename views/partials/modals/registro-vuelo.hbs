@@ -1,0 +1,60 @@
+<!-- Modal -->
+<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Registro de Vuelo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Default form register -->
+                <form class="text-center border border-light p-5" method="POST" action="/users/vuelos">
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <!-- First name -->
+                            <input type="text" id="origen" class="form-control" placeholder="Origen" name="origen">
+                        </div>
+                        <div class="col">
+                            <!-- Last name -->
+                            <input type="text" id="llegada" class="form-control" placeholder="llegada" name="llegada">
+                        </div>
+                    </div>
+
+                    <label for="horas">Horas de Vuelo</label>
+                    <input type="number" value="1" min="0" id="horasVuelo" class="form-control" placeholder="Horas de vuelo" aria-describedby="defaultRegisterFormPhoneHelpBlock"
+                        name="horasVuelo">
+
+                    <br>
+
+                    <div class="">
+                        <label for="aeronave">Seleccione la aeronave</label>
+                        <select class="custom-select mr-sm-2" name="aeronave" id="aeronave">
+                            {{#each aeronaves}}
+                            <option value="{{id}}">{{nombre}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+
+                    <br>
+
+                    <div class="form-group">
+                        <label for="estado">Estado de la aeronave</label>
+                        <br>
+                        <textarea class="form-control" name="observaciones" rows="5"></textarea>
+                    </div>
+
+                    <input type="hidden" name="piloto" value="{{user._id}}">
+
+                    <!-- Sign up button -->
+                    <button class="btn btn-info my-4 btn-block" type="submit">Registrar Vuelo</button>
+
+                    <hr>
+
+                </form>
+                <!-- Default form register -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<h2 class="text-right font-weight-bold" style="color:#1976D2">Horas totales de vuelo: {{user.horasVoladas}}</h2>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
+  Registrar vuelo
+</button>
+<br><br>
+
+<div class="table-responsive text-nowrap">
+
+  <table id="table" class="table table-hover table-sm">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Lugar de salida</th>
+        <th scope="col">Lugar de llegada</th>
+        <th scope="col">Horas de Vuelo</th>
+        <th scope="col">Aeronave</th>
+        <th scope="col">Observaciones</th>
+        <th scope="col">Fecha de Vuelo</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each vuelos}}
+      <tr>
+        <th scope="row">{{counter @index}}</th>
+        <td>{{origen}}</td>
+        <td>{{llegada}}</td>
+        <td>{{horasVuelo}}</td>
+        <td>{{aeronave.nombre}}</td>
+        <td style="white-space:pre">{{observaciones}}</td>
+        <td>{{fechaVuelo}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+</div>
+
+
+
+
+
